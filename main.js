@@ -1,4 +1,4 @@
-"use strict";
+'use strict';
 
 const pets= [
     {
@@ -58,12 +58,33 @@ const pets= [
    
 ];
 
+const handleButtonClick = (e) => {
+    const buttonId = e.target.id;
+
+    const selectedPets = [];
+    for (let i = 0; i < pets.length; i++) {
+        if(pets[i].type === buttonId) {
+            selectedPets.push(pets[i]);
+        }
+    }
+
+    if (buttonId === 'All') {
+        buildAdoptAPetCard(pets)
+    } else {
+    buildAdoptAPetCard(selectedPets); 
+  }
+}
+
+const buttonEvents = () => {
+    document.querySelector('#pet-buttons').addEventListener('click', handleButtonClick)
+
+} 
 const printToDom = (divId, textToPrint) => {
     const selectedDiv = document.getElementById(divId);
     selectedDiv.innerHTML = textToPrint;
 }
-const buildAdoptAPetCard = () => {
-    let domString = "";
+const buildAdoptAPetCard = (pets) => {
+    let domString = '';
     for (let i=0; i < pets.length; i++) {
         domString +=  `<div class="pets">`;
         domString +=  `<h1 class="pet-name">${pets[i].name}</h1>`;
@@ -73,7 +94,12 @@ const buildAdoptAPetCard = () => {
         domString +=  `<h4 class="pet-type">${pets[i].type}</h4>`;
         domString +=  `</div>`;
     }
-    printToDom("petCard" , domString);
+    printToDom('petCard' , domString);
 }
 
-buildAdoptAPetCard ();
+const init = () => {
+    buttonEvents();
+    buildAdoptAPetCard (pets);
+}
+
+init();

@@ -56,7 +56,7 @@ body {
     
 }
 
-.button1 {
+#All {
     border: none;
     color: white;
     padding: 15px 32px;
@@ -67,7 +67,7 @@ body {
     margin: 4px 2px;
     cursor: pointer;
 }
-.button2 {
+#Cat {
     border: none;
     color: white;
     padding: 15px 32px;
@@ -78,7 +78,18 @@ body {
     margin: 4px 2px;
     cursor: pointer;
 }
-.button3 {
+#Dog {
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+}
+#Bird {
     border: none;
     color: white;
     padding: 15px 32px;
@@ -90,19 +101,25 @@ body {
     cursor: pointer;
 }
 
-.button1 {
+#All {
     background-color: lightgreen;
     color: black;
     border: 2px solid #4CAF50;
 }
 
-.button2 {
+#Cat {
+    background-color: lightyellow;
+    color: black;
+    border: 2px solid goldenrod;
+}
+
+#Dog {
     background-color:lightblue;
     color: black;
     border: 2px solid navy;
 }
 
-.button3 {
+#Bird {
     background-color: lightcoral;
     color: black;
     border: 2px solid coral;
